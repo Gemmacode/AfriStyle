@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AfriStyle.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+438c609d879899f7186b4c60a9daf86a40cd94c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f43d475b683a63c7cf0f411a7d0a8fd5285f22f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("AfriStyle.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AfriStyle.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

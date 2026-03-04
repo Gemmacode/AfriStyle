@@ -1,0 +1,12 @@
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\bin\Debug\net9.0\AfriStyle.Domain.deps.json
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\bin\Debug\net9.0\AfriStyle.Domain.dll
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\bin\Debug\net9.0\AfriStyle.Domain.pdb
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\AfriStyle.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\AfriStyle.Domain.AssemblyInfoInputs.cache
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\AfriStyle.Domain.AssemblyInfo.cs
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\AfriStyle.Domain.csproj.CoreCompileInputs.cache
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\AfriStyle.Domain.sourcelink.json
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\AfriStyle.Domain.dll
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\refint\AfriStyle.Domain.dll
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\AfriStyle.Domain.pdb
+C:\Users\JEMIMAH\Desktop\JeProjects\AfriStyle\AfriStyle.Domain\obj\Debug\net9.0\ref\AfriStyle.Domain.dll
