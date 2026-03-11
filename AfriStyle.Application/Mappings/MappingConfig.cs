@@ -1,6 +1,7 @@
 ﻿using AfriStyle.Domain.Entities;
 using AfriStyle.Domain.ValueObjects;
 using Mapster;
+using AfriStyle.Application.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
