@@ -1,0 +1,71 @@
+# .gitignore for a .NET / Visual Studio project
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+artifacts/
+
+# Publish output
+publish/
+wwwroot/
+
+# Test results
+TestResults/
+
+# NuGet
+*.nupkg
+packages/
+.nuget/packages/
+project.lock.json
+project.fragment.lock.json
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# User secrets
+secrets.json
+appsettings.Development.json
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Coverage and analysis
+coverage.*
+*.coverage
+*.coveragexml
+
+# OS files
+Thumbs.db
+.DS_Store
+ehthumbs.db
+
+# Database files
+*.db
+*.sqlite
+
+# Ignore temporary files
+*.tmp
+*~
+
+# Ignore publish and temporary folders often created by CI/tools
+publish_output/
+
+# Ignore generated files
+Generated*/
+
+# End of .gitignore

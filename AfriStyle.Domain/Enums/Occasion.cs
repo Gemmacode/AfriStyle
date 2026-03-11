@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace AfriStyle.Domain.Enums
 {
-    public enum GenderPreference
+    public enum Occasion
     {
-        Any,
-        Male,
-        Female,
-        Unisex
+        Everyday = 1,
+        Office = 2,
+        Wedding = 3,
+        Church = 4,
+        Party = 5,
+        Gym = 6,
+        Travel = 7
     }
 }

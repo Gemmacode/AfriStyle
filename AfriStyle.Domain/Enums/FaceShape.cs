@@ -9,12 +9,12 @@ namespace AfriStyle.Domain.Enums
     public enum FaceShape
     {
         Unknown = 0,
-        Oval,
-        Round,
-        Square,
-        Heart,
-        Diamond,
-        Oblong,
-        Rectangle      
+        Oval = 1,
+        Round = 2,
+        Square = 3,
+        Heart = 4,
+        Diamond = 5,
+        Oblong = 6,
+        Triangle = 7
     }
 }

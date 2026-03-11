@@ -1,4 +1,4 @@
-@AfriStyle.API_HostAddress = http://localhost:5279
+@AfriStyle.API_HostAddress = http://localhost:5214
 
 GET {{AfriStyle.API_HostAddress}}/weatherforecast/
 Accept: application/json

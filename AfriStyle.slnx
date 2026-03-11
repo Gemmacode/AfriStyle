@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="AfriStyle.API/AfriStyle.API.csproj" />
+  <Project Path="AfriStyle.Application/AfriStyle.Application.csproj" />
+  <Project Path="AfriStyle.Domain/AfriStyle.Domain.csproj" />
+  <Project Path="AfriStyle.Infrastructure/AfriStyle.Infrastructure.csproj" />
+  <Project Path="AfriStyle.Tests/AfriStyle.Tests.csproj" />
+</Solution>
