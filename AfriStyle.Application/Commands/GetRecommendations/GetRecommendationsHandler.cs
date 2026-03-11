@@ -40,8 +40,7 @@ namespace AfriStyle.Application.Commands.GetRecommendations
             CancellationToken cancellationToken)
         {
             var req = command.Request;
-
-            // ── Step 1: Build FaceMeasurements from MediaPipe data ──────────
+           
             var measurements = new FaceMeasurements(
                 foreheadWidth: req.ForeheadWidth,
                 cheekboneWidth: req.CheekboneWidth,
@@ -49,12 +48,10 @@ namespace AfriStyle.Application.Commands.GetRecommendations
                 faceLength: req.FaceLength,
                 jawAngle: req.JawAngle
             );
-
-            // ── Step 2: Classify face shape ──────────────────────────────────
+            
             (FaceShape shape, double confidence) = _classifier.Classify(measurements);
             _logger.LogInformation("Face classified as {Shape} ({Confidence:P0})", shape, confidence);
-
-            // ── Step 3: Load styles, score all of them ──────────────────────
+           
             var allStyles = await _styleRepo.GetAllAsync(req.ForMen, cancellationToken);
 
             var scored = allStyles
