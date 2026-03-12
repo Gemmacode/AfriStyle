@@ -1,44 +1,80 @@
+﻿using AfriStyle.API.Middleware;
+using AfriStyle.Application;
+using AfriStyle.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// ═══════════════════════════════════════════════════════════════
+// SERVICE REGISTRATION
+// ═══════════════════════════════════════════════════════════════
+
+// Controllers
+builder.Services.AddControllers();
+
+// Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new()
+    {
+        Title = "AfriStyle Fit API",
+        Version = "v1",
+        Description = "Hairstyle recommendations specialized for African & textured hair"
+    });
+});
+
+// Application layer (MediatR, FluentValidation, Mapster)
+builder.Services.AddApplication();
+
+// Infrastructure layer (Repositories, Domain Services)
+builder.Services.AddInfrastructure();
+
+// CORS for React frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ReactDevPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173", "http://localhost:3000") // Vite + CRA
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// ═══════════════════════════════════════════════════════════════
+// HTTP PIPELINE CONFIGURATION
+// ═══════════════════════════════════════════════════════════════
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Global error handling (must be first)
+app.UseMiddleware<ErrorHandlingMiddleware>();
+
+// Swagger (development only)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AfriStyle Fit API v1");
+        // Serve Swagger UI under /swagger so /swagger/index.html works (avoid root override)
+        c.RoutePrefix = "swagger";
+    });
 }
 
+// CORS
+app.UseCors("ReactDevPolicy");  
+
+// HTTPS redirection
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// Authorization (not used in MVP, but included for future)
+app.UseAuthorization();
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+// Map controllers
+app.MapControllers();
+
+// ═══════════════════════════════════════════════════════════════
+// RUN
+// ═══════════════════════════════════════════════════════════════
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

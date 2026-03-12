@@ -5,12 +5,6 @@ using AfriStyle.Domain.ValueObjects;
 using MediatR;
 using Mapster;
 using Microsoft.Extensions.Logging;
-using MapsterMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AfriStyle.Domain.Services;
 
 namespace AfriStyle.Application.Commands.GetRecommendations
@@ -78,8 +72,7 @@ namespace AfriStyle.Application.Commands.GetRecommendations
                 Recommendations: recommendations
             );
         }
-
-        // ── AfriStyle-specific descriptions (culturally relevant) ────────
+       
 
         private static string GetDescription(FaceShape shape) => shape switch
         {
